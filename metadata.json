@@ -1,0 +1,7 @@
+{
+  "name": "Al Ahmadi Digital Order Taker",
+  "description": "A high-end digital menu and ordering system for Al Ahmadi Restaurant, featuring signature Kuwaiti heritage dishes, a dynamic cart, and direct WhatsApp integration for seamless takeaway ordering.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
