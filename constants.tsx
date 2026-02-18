@@ -2,13 +2,24 @@
 import { MenuItem } from './types';
 
 export const MENU_ITEMS: MenuItem[] = [
+  // --- SIGNATURE BUFFETS (NEW) ---
+  {
+    id: 'm_dinner_buffet',
+    name: 'International Dinner Buffet | بوفيه عشاء عالمي',
+    price: 10.950,
+    category: 'Buffet',
+    isBuffet: true,
+    description: 'A diverse spread of authentic Kuwaiti, Levantine, and International dishes at our Crowne Plaza branch.',
+    imageUrl: 'https://images.unsplash.com/photo-1550966841-3ee7adac1af8?auto=format&fit=crop&q=80&w=800'
+  },
+
   // --- SIGNATURE TRAYS (RICE) ---
   {
     id: 'm_meat_machboos_tray',
-    name: 'Meat Machboos Tray | صينية مجبوس لحم',
+    name: 'Meat Machboos | مجبوس لحم فاخر',
     price: 5.250,
     category: 'Rice',
-    description: 'Traditional spiced meat served over premium basmati rice with broth and maabouj.',
+    description: 'Aromatic basmati rice topped with tender lamb, served with red and green maabouj and signature agar.',
     imageUrl: 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&q=80&w=800'
   },
   {
@@ -113,14 +124,6 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Crispy toasted bread, sumac-infused greens, and a zesty lemon dressing.',
     imageUrl: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=800'
   },
-  {
-    id: 'm_hamsa_potato',
-    name: 'Hamsa Potato Flower | حمسة بطاط زهرة',
-    price: 2.250,
-    category: 'Sides',
-    description: 'Creamy mix of potatoes and cauliflower sautéed with signature dill sauce.',
-    imageUrl: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=800'
-  },
 
   // --- DESSERTS & EXTRAS ---
   {
@@ -130,59 +133,63 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'Sweets',
     description: 'A rotation of daily fresh Kuwaiti desserts including Luqaimat.',
     imageUrl: 'https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 'm_arabic_coffee',
-    name: 'Arabic Coffee | قهوة عربية',
-    price: 1.500,
-    category: 'Sweets',
-    description: 'Premium traditional coffee prepared with aromatic cardamom.',
-    imageUrl: 'https://images.unsplash.com/photo-1541173109020-9c5d8a48e169?auto=format&fit=crop&q=80&w=800'
   }
 ];
 
 export const GUEST_REVIEWS = [
+  {
+    author: 'Ibrahim I.S.K',
+    rating: 5,
+    date: 'a year ago',
+    text: 'Bibin was so helpful',
+    images: []
+  },
+  {
+    author: 'samir sabri',
+    rating: 5,
+    date: 'a year ago',
+    text: 'Everything is great and service was excellent especially mr Bibin',
+    images: []
+  },
+  {
+    author: 'Mohamed Ismail',
+    rating: 5,
+    date: 'a year ago',
+    text: 'Mr Bibin from the service team is friendly and all the staff are excellent , food is perfect With their general manager Mr Mohamady',
+    images: []
+  },
+  {
+    author: 'Ahmad Al-Menshawi',
+    rating: 3,
+    date: 'a year ago',
+    text: 'My first visit in 2024 since 2008, If you are going for the open buffet dinner reconsider your choice. The dinner buffet is nothing like what is used to be, very poor buffet what a ...',
+    images: []
+  },
+  {
+    author: 'Raghdan Abdallah',
+    rating: 5,
+    date: 'a year ago',
+    text: 'Bibin and Lydia very nice and careful people. Very nice service',
+    images: []
+  },
   {
     author: 'eris bamboo',
     rating: 5,
     date: '3 years ago',
     text: 'Amazing food, excellent service from Thomas. The buffet variety is outstanding and everything is kept fresh and warm.',
     images: [
-      'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=400',
-      'https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=400'
+      'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=400'
     ]
   },
   {
     author: 'Moh ODT',
     rating: 5,
     date: '2 years ago',
-    text: 'Food is great, the ambience is so nice, the staff are super friendly and welcoming, special thanks to Thomas. I tried the Egyptian Pigeon for the first time, and it is gooood!',
+    text: 'Food is great, the ambience is so nice, the staff are super friendly and welcoming, special thanks to Thomas.',
     images: [
       'https://images.unsplash.com/photo-1562607349-599222440620?auto=format&fit=crop&q=80&w=400'
-    ]
-  },
-  {
-    author: 'Alansary 81',
-    rating: 5,
-    date: '11 months ago',
-    text: 'Tabarak Allah.. Five stars! The buffet is delicious and worth the money paid for it, we tried it for breakfast and dinner and both times I liked the variety of items, and I will visit again, God willing.',
-    images: [
-      'https://images.unsplash.com/photo-1544124499-58912cbddaad?auto=format&fit=crop&q=80&w=400',
-      'https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&q=80&w=400'
-    ]
-  },
-  {
-    author: 'Mohamed Ismail',
-    rating: 5,
-    date: 'a year ago',
-    text: 'Mr Bibin from the service team is friendly and all the staff are excellent, food is perfect With their general manager Mr Mohamady. A truly heritage experience.',
-    images: [
-      'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=400'
     ]
   }
 ];
 
 export const CONTACT_WHATSAPP = '96596961300';
-export const AMBIENCE_IMAGES = [
-  'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=1200'
-];

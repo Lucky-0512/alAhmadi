@@ -5,17 +5,15 @@ interface HeaderProps {
   onMenuClick: () => void;
   onSearchClick: () => void;
   onUserClick: () => void;
+  onCartClick: () => void;
+  cartCount: number;
 }
 
-const Header: React.FC<HeaderProps> = ({ onMenuClick, onSearchClick, onUserClick }) => {
+const Header: React.FC<HeaderProps> = ({ onMenuClick, onSearchClick, onUserClick, onCartClick, cartCount }) => {
   return (
-    <header className="relative w-full bg-[#1c1c1c] overflow-hidden flex flex-col">
-      {/* 
-          Status Bar & Patterned Section 
-          Color: Deep warm orange/gold (#d48c31)
-      */}
-      <div className="h-16 bg-[#d48c31] relative w-full">
-        {/* Intricate Islamic Geometric Pattern Overlay */}
+    <header className="relative w-full bg-[#1c1c1c] overflow-hidden flex flex-col z-[55]">
+      {/* Status Bar & Patterned Section */}
+      <div className="h-12 bg-[#d48c31] relative w-full">
         <div 
           className="absolute inset-0 opacity-20 pointer-events-none"
           style={{
@@ -24,12 +22,10 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick, onSearchClick, onUserClick
           }}
         ></div>
 
-        {/* The Repeating Dome/Arch Cutout Transition */}
-        <div className="absolute -bottom-[1px] left-0 w-full h-8 flex items-end">
+        <div className="absolute -bottom-[1px] left-0 w-full h-6 flex items-end">
           <div className="flex w-full h-full">
-            {[...Array(10)].map((_, i) => (
+            {[...Array(12)].map((_, i) => (
               <div key={i} className="flex-1 relative h-full">
-                {/* The Dark Dome Shape */}
                 <div 
                   className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[110%] h-[120%] bg-[#1c1c1c]" 
                   style={{ 
@@ -44,9 +40,9 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick, onSearchClick, onUserClick
       </div>
 
       {/* Main Logo and Icons Section */}
-      <div className="px-5 pb-6 pt-1 flex justify-between items-center bg-[#1c1c1c] relative">
+      <div className="px-5 pb-5 pt-0 flex justify-between items-center bg-[#1c1c1c] relative">
         {/* Left: Hamburger Menu */}
-        <div className="w-10">
+        <div className="flex items-center">
           <button 
             onClick={onMenuClick}
             className="text-zinc-400 p-2 hover:text-[#d48c31] transition-colors"
@@ -60,13 +56,13 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick, onSearchClick, onUserClick
         </div>
 
         {/* Center: Logo */}
-        <div className="flex flex-col items-center">
-          <span className="header-font text-[34px] text-[#d48c31] leading-none tracking-wide">الأحمدي</span>
-          <span className="text-[8px] text-[#d48c31]/90 font-black tracking-[0.5em] uppercase mt-1">AL AHMADI</span>
+        <div className="flex flex-col items-center absolute left-1/2 -translate-x-1/2 pointer-events-none">
+          <span className="header-font text-[28px] md:text-[32px] text-[#d48c31] leading-none tracking-wide">الأحمدي</span>
+          <span className="text-[7px] text-[#d48c31]/90 font-black tracking-[0.4em] uppercase mt-0.5">AL AHMADI</span>
         </div>
 
         {/* Right: Actions */}
-        <div className="flex items-center gap-1 w-10 justify-end">
+        <div className="flex items-center gap-0.5">
           <button 
             onClick={onSearchClick} 
             className="text-zinc-400 p-2 hover:text-[#d48c31] transition-all"
@@ -78,15 +74,27 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick, onSearchClick, onUserClick
           </button>
           
           <button 
-            onClick={onUserClick} 
-            className="text-zinc-400 p-1 hover:text-[#d48c31] transition-all"
+            onClick={onCartClick}
+            className="text-zinc-400 p-2 hover:text-[#d48c31] transition-all relative"
           >
-            <div className="w-9 h-9 rounded-full flex items-center justify-center text-[#d48c31]">
-              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
-            </div>
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+            </svg>
+            {cartCount > 0 && (
+              <span className="absolute top-1 right-1 w-4 h-4 bg-[#d48c31] text-zinc-900 rounded-full flex items-center justify-center text-[8px] font-black border border-[#1c1c1c]">
+                {cartCount}
+              </span>
+            )}
+          </button>
+
+          <button 
+            onClick={onUserClick} 
+            className="text-zinc-400 p-2 hover:text-[#d48c31] transition-all hidden sm:block"
+          >
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
           </button>
         </div>
       </div>

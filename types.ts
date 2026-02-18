@@ -1,5 +1,5 @@
 
-export type Category = 'All' | 'Rice' | 'Grills' | 'Breakfast' | 'Sides' | 'Sweets';
+export type Category = 'All' | 'Rice' | 'Grills' | 'Breakfast' | 'Sides' | 'Sweets' | 'Buffet';
 
 export interface MenuItem {
   id: string;
@@ -8,6 +8,7 @@ export interface MenuItem {
   category: Category;
   description: string;
   imageUrl: string;
+  isBuffet?: boolean;
 }
 
 export interface CartItem extends MenuItem {
